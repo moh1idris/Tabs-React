@@ -36,6 +36,14 @@ const {company, dates, duties, title} = jobs[value];
     </div>
     <div className="jobs-center">
       {/* btn container */}
+      <div className="btn-container">
+
+      {jobs.map((item,index)=>{
+        return( 
+          <button key={item.id} onClick={()=>setValue(index)} className={`job-btn ${index === value && 'active-btn'}`}>{item.company}</button>
+          );
+        })}
+        </div>
       {/* job info */}
       <article className='job-info'>
         <h3>{title}</h3>
